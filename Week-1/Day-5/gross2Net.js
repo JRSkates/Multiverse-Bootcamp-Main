@@ -8,7 +8,7 @@ const gross2Net = (grossPay) => {
 
     // Just wanted to see if I could reformat this into a single line of code!
 
-    // return grossPay - ((grossPay * 0.25) + (grossPay * 0.07))
+    return grossPay - ((grossPay * 0.25) + (grossPay * 0.07))
 }
 
 console.log(gross2Net(100)); // Outputs: 68
