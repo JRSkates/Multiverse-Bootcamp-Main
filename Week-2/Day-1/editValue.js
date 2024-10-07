@@ -5,7 +5,6 @@ const accounts = [
     ["chasm", 20000, 0.15, 17000, true],
 ];
   
-  // Write your code here
 const editValue = (sheet, i, j, newVal) => {
     sheet[i][j] = newVal;
     return sheet;
