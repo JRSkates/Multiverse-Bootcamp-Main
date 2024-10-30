@@ -5,12 +5,12 @@ async function main() {
     await db.sync();
 
     // Create a new user
-    await User.create({
+    const user = await User.create({
         username: "JRSkates", 
         email: "jrskates@gmail.com", 
         password: "test123",
     })
-
+    console.log(user.toJSON());
 
     // Read
     const result1 = User.findAll({where: {username: "JRSkates"}});
