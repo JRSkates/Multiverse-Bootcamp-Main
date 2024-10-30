@@ -1,4 +1,4 @@
-const { db, DataTypes, Model } = require('../db/connection');
+const { db, DataTypes, Model } = require('../../db/connection');
 
 // extend the Sequlize builder Model
 class User extends Model {}
@@ -14,6 +14,7 @@ User.init({
     modelName: 'User',
 })
 
+module.exports = User;
 // this runs to create the database
 db.sync();
 
