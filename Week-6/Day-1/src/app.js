@@ -14,6 +14,12 @@ app.get("/application", (req, res) => {
 app.get("/random", (req, res) => {
     const random = Math.floor(Math.random() * 3)
     res.send(`Random number: ${random}`)
-  });
+});
+
+// localhost:3000/flipcoin
+app.get('/flipcoin', (req, res) => {
+    const result = Math.random() < 0.5 ? 'heads' : 'tails';
+    res.send(result);
+});
 
 module.exports = app;
