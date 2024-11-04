@@ -1,8 +1,9 @@
 const express = require('express');
 const app = express();
 
+// Tell express to serve static content in the public directory
 // run with: node server.js
-app.use("/myHTML", express.static("public"))
+app.use(express.static("public"))
 
 // localhost:3000/application
 app.get("/application", (req, res) => {
