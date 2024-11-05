@@ -15,6 +15,12 @@ app.get('/', (req, res) => {
     res.json({fruits})
 })
 
+// GET Parameter ID Value
+app.get('/:id', (req, res) => {
+    const id = req.params.id;
+    res.send(id)
+})
+
 //UPDATE - Push/Patch
 app.put('/', (req, res) => {
     fruits[0] = req.body.fruit;
@@ -23,8 +29,10 @@ app.put('/', (req, res) => {
 
 
 //DELETE - Delete
-app.delete('/', (req, res) => {
-    fruits.pop();
+// Route parameter of id to delete specific element
+app.delete('/:id', (req, res) => {
+    const parameter = req.params.id
+    fruits.splice(parameter, 1);
     res.json({fruits});
 });
 
