@@ -25,3 +25,20 @@ test("POST /users updates users array", async () => {
     { name: "Spongebob", age: 22 },
   ]);
 });
+
+test("POST /users returns error key with array if name field is empty", async () => {
+    const response = await request(server)
+      .post("/users")
+      .send({ name: "", age: 28 });
+    expect(response.statusCode).toBe(200);
+    const responseData = JSON.parse(response.text);
+    expect(responseData.error).toEqual([
+      {
+        value: "",
+        msg: "Invalid value",
+        location: "body",
+        path: "name",
+        type: "field",
+      },
+    ]);
+  });
